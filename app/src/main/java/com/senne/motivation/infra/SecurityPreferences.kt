@@ -11,8 +11,8 @@ private val mSharedPreferences =
         mSharedPreferences.edit().putString(key, value).apply()
     }
 
-    fun getString(key: String, value: String) {
-
+    fun getString(key: String): String {
+        return mSharedPreferences.getString(key, "") ?: ""
     }
 
 }

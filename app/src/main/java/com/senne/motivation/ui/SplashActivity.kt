@@ -13,21 +13,18 @@ import com.senne.motivation.infra.SecurityPreferences
 class SplashActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var msecurityPreferences :SecurityPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
         msecurityPreferences = SecurityPreferences(this)
+
         if(supportActionBar != null) {
             supportActionBar!!.hide()
         }
         val buttonSave: Button = findViewById(R.id.buttonSave)
         buttonSave.setOnClickListener(this)
-
-
-        val securityPreferences = SecurityPreferences(this)
-        securityPreferences.storeString("","")
-
 
     }
 
