@@ -38,7 +38,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         msecurityPreferences = SecurityPreferences(this)
         var textName: TextView = findViewById(R.id.textName)
-        textName.text = msecurityPreferences.getString(MotivationsConstants.KEY.PERSON_NAME)
+        val name = msecurityPreferences.getString(MotivationsConstants.KEY.PERSON_NAME)
+        textName.text = "Olá, $name"
     }
 
     override fun onClick(view: View) {

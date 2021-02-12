@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.senne.motivation.R
+import com.senne.motivation.infra.MotivationsConstants
 import com.senne.motivation.infra.SecurityPreferences
 
 class SplashActivity : AppCompatActivity(), View.OnClickListener {
@@ -26,6 +27,8 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
         val buttonSave: Button = findViewById(R.id.buttonSave)
         buttonSave.setOnClickListener(this)
 
+        verifyName()
+
     }
 
     override fun onClick(view: View) {
@@ -35,12 +38,21 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    private fun verifyName() {
+       val name =  msecurityPreferences.getString(MotivationsConstants.KEY.PERSON_NAME)
+        if(name != "") {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+    }
+
     private fun bundleSave() {
         val name : EditText = findViewById(R.id.cx)
 
         if(name.text.toString() != "") {
             msecurityPreferences.storeString("name", name.text.toString())
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }else {
             Toast.makeText(this, "Digite seu nome", Toast.LENGTH_SHORT).show()
         }
