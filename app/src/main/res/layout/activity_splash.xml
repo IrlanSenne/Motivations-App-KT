@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9E3760"
+    android:background="#932D76"
     android:padding="16dp"
     tools:context=".ui.SplashActivity">
 

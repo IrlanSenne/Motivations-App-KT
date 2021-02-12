@@ -14,6 +14,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        if(supportActionBar != null) {
+            supportActionBar!!.hide()
+        }
+
         msecurityPreferences = SecurityPreferences(this)
         var textName : TextView = findViewById(R.id.textName)
         textName.text = msecurityPreferences.getString(MotivationsConstants.KEY.PERSON_NAME)
