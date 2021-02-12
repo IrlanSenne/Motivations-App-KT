@@ -64,6 +64,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:text="Frase"
+        android:textAlignment="center"
+        android:padding="16dp"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -80,6 +82,7 @@
         />
 
     <Button
+
         android:id="@+id/newPhrase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
